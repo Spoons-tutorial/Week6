@@ -8,7 +8,6 @@ WHERE user_id={}
 INSERT_USER = """
 INSERT INTO users
 VALUES ({}, '{}', {}, '{}', '{}')
-"""
 
 
 DELETE_USER = """

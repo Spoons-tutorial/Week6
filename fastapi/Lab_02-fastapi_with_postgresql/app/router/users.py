@@ -4,6 +4,7 @@ from app.database import schema
 from app.database.db import engine
 from app.database.query import GET_USER, INSERT_USER, DELETE_USER, UPDATE_USER
 
+
 schema.Base.metadata.create_all(bind=engine)
 # app/database/schema.py에서 정의한 테이블이 없으면 생성합니다.
 
@@ -56,3 +57,4 @@ def delete_user():
 @router.put()
 def update_user():
     pass
+
