@@ -9,7 +9,7 @@ class UserInfo(BaseModel):
     name: str
     age: int = Field(..., ge=0, lt=200) # 0<= age <200, ge: greater than or equal to, lt: less than
     gender: str
-    contry: Optional[str] = Field(None, min_length=1, max_length=100)
+    country: Optional[str] = Field(None, min_length=1, max_length=100)
 
     class Config: # swagger에서 보여줄 각 파라미터에 대한 예시를 설정할 수 있습니다.
         schema_extra={
@@ -17,6 +17,6 @@ class UserInfo(BaseModel):
                 "name": "eva",
                 "age": 41,
                 "gender": "female",
-                "contry": "France"
+                "country": "France"
             }
         }

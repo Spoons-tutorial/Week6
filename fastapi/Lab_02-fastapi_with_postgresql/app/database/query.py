@@ -23,7 +23,7 @@ SET
     name = '{}',
     age = {},
     gender = '{}',
-    contry = '{}'
+    country = '{}'
 WHERE
     user_id = {}
 """
