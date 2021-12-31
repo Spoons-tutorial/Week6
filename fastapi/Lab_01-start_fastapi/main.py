@@ -4,9 +4,11 @@ from fastapi import FastAPI
 from pydantic import BaseModel, Field
 
 app = FastAPI()
+
 # FastAPI()는 fastapi의 기능들이 정의되어있는 클래스 입니다.
 # 위와같이 app = FastAPI()를 호출하면 
 # app에 FastAPI클래스의 인스턴스를 생성하여 할당하게 됩니다.
+
 
 class UserInfo(BaseModel):
     """
@@ -45,3 +47,4 @@ def add_user(user_id: int, user_info: UserInfo):
         user_list[user_id] = user_info.dict() # id가 고유하다면 해당 유저의 정보를 user_list에 저장합니다.
         return {"result": f"{user_list[user_id]['name']} 유저가 추가되었습니다."} 
         # 결과로 요청받은 user_id를 가진 유저의 이름을 user_list에서 찾아 반환해 줍니다.
+

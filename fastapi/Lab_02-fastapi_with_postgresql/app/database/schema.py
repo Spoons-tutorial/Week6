@@ -9,5 +9,5 @@ class Users(Base):
     name = Column(String, nullable = False)
     age = Column(Integer, nullable = False)
     gender = Column(String, nullable = False)
-    contry = Column(String, nullable = True)
+    country = Column(String, nullable = True)
     # 데이터베이스 스키마를 생성합니다.
