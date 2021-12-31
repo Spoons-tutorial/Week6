@@ -4,7 +4,6 @@ from fastapi import FastAPI
 from pydantic import BaseModel, Field
 
 app = FastAPI()
-
 # FastAPI()는 fastapi의 기능들이 정의되어있는 클래스 입니다.
 # 위와같이 app = FastAPI()를 호출하면 
 # app에 FastAPI클래스의 인스턴스를 생성하여 할당하게 됩니다.
