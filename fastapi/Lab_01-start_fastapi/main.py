@@ -4,6 +4,9 @@ from fastapi import FastAPI
 from pydantic import BaseModel, Field
 
 app = FastAPI()
+# FastAPI()는 fastapi의 기능들이 정의되어있는 클래스 입니다.
+# 위와같이 app = FastAPI()를 호출하면 
+# app에 FastAPI클래스의 인스턴스를 생성하여 할당하게 됩니다.
 
 class UserInfo(BaseModel):
     """
@@ -17,7 +20,8 @@ class UserInfo(BaseModel):
     # Optional을 설정하지 않고 Field의 첫번째 파라미터로 
     # None을 입력해도 동일하게 작동합니다.
 
-user_list = {}
+
+user_list = {} # API로 전달받은 데이터를 저장할 dict입니다.
 
 
 @app.get("/") # 해당 엔드포인트로 get 요청을 받으면 아래의 함수를 실행합니다.
