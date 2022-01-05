@@ -48,13 +48,13 @@ def add_user(user_id: int, user_info: UserInfo):
 # Hands - on
 ## 주어진 DELETE_USER 쿼리를 활용하여
 ## 유저의 아이디를 받아 해당 유저를 제거하는 코드를 작성하세요.
-@router.delete()
+@router.delete('/')
 def delete_user():
     pass
 
 ## 주어진 UPDATE_USER 쿼리를 활용하여
 ## 유저의 아이디를 받아 해당 유저의 정보를 업데이트하는 코드를 작성하세요.
-@router.put()
+@router.put('/')
 def update_user():
     pass
 
