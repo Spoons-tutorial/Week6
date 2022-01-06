@@ -26,3 +26,9 @@ SET
 WHERE
     user_id = {}
 """
+
+SELECT_MODEL = """
+SELECT *
+FROM rf_model
+WHERE model_name = '{}'
+"""
