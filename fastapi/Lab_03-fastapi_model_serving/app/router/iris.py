@@ -35,14 +35,14 @@ def predict_iris(iris_info: IrisInfo, model_name:str = 'rf_clf_model_0106') -> s
             result = conn.execute(SELECT_MODEL.format(model_name)).fetchone()
             model_name, model_path = result
     except:
-        raise HTTPException(status_code=404, detail="insert_model_path.sh를 실행해주세요.")
+        raise HTTPException(status_code=404, detail="DB에 model_name이 존재하지 않습니다.")
 
     try:
         rf = load_rf_clf(model_path)
         test = np.array([*iris_info.dict().values()]).reshape(1,-1)
         result = rf.predict(test)[0]
     except FileNotFoundError:
-        raise HTTPException(status_code=400, detail="입력하신 모델명은 존재하지 않습니다.")
+        raise HTTPException(status_code=404, detail="경로에 파일이 존재하지 않습니다.")
         
     return {
         "result": f'{model_name} 모델로 예측한 결과는 {iris_target_names[result]}입니다.'
