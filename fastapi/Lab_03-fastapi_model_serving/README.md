@@ -8,8 +8,9 @@
   1. db에 모델이 저장된 경로를 조회한다.
   2. db에서 받아온 경로를 바탕으로 모델을 읽어온다.
 
-- 모델을 읽어올 때 [try except](https://wikidocs.net/30) 경우
-  - FileNotFoundError 만 캐치하도록 되어있습니다.
+- 모델을 load에서 [try except](https://docs.python.org/3/tutorial/errors.html) 경우
+  - FileNotFoundError 만 캐치하도록 되어있습니다. (다른 오류가 일어날 경우 catch하지 않습니다.)
 
-- 원하는대로 동작하지 않을 경우
-  - HTTPException(https://fastapi.tiangolo.com/tutorial/handling-errors/)의 내용을 토대로 사용자에게 리턴됩니다.
+- `return {"error": "~~"}` 를 HTTPException으로 수정하였습니다.
+  - HTTPException(https://fastapi.tiangolo.com/tutorial/handling-errors/)에 작성된 내용을 토대로 사용자에게 리턴됩니다.
+  - 이를 통해 상황에 맞는 HTTP code를 전달할 수 있습니다.
