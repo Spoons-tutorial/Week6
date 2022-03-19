@@ -8,7 +8,7 @@ from ..basemodels import IrisInfo
 
 router = APIRouter(prefix='/iris')
 
-@router.get('/predict')
+@router.post('/predict')
 async def predict(iris_info: IrisInfo):
     model = None
     try:
